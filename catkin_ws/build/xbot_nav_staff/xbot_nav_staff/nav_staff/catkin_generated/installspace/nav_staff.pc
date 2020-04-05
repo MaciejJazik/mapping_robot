@@ -1,0 +1,8 @@
+prefix=/home/maciej/catkin_ws/install
+
+Name: nav_staff
+Description: Description of nav_staff
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/maciej/catkin_ws/install/lib 
+Requires: 

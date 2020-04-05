@@ -1,0 +1,35 @@
+# CMake generated Testfile for 
+# Source directory: /home/maciej/catkin_ws/src
+# Build directory: /home/maciej/catkin_ws/build
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+subdirs("gtest")
+subdirs("freenect_stack/freenect_launch")
+subdirs("freenect_stack/freenect_stack")
+subdirs("hector_slam_example")
+subdirs("iai_kinect2/iai_kinect2")
+subdirs("slam_gmapping/slam_gmapping")
+subdirs("turtlebot3/turtlebot3")
+subdirs("turtlebot3_msgs")
+subdirs("turtlebot3/turtlebot3_navigation")
+subdirs("turtlebot3_simulations/turtlebot3_simulations")
+subdirs("xbot_nav_staff/xbot_nav_staff/amcl_odom")
+subdirs("laser_values")
+subdirs("xbot_nav_staff/xbot_nav_staff/machine")
+subdirs("xbot_nav_staff/xbot_nav_staff/marker")
+subdirs("xbot_nav_staff/xbot_nav_staff/nav_staff")
+subdirs("freenect_stack/freenect_camera")
+subdirs("iai_kinect2/kinect2_registration")
+subdirs("fake_odom_publisher")
+subdirs("slam_gmapping/gmapping")
+subdirs("iai_kinect2/kinect2_bridge")
+subdirs("iai_kinect2/kinect2_calibration")
+subdirs("iai_kinect2/kinect2_viewer")
+subdirs("turtlebot3/turtlebot3_bringup")
+subdirs("turtlebot3/turtlebot3_example")
+subdirs("turtlebot3_simulations/turtlebot3_fake")
+subdirs("turtlebot3_simulations/turtlebot3_gazebo")
+subdirs("turtlebot3/turtlebot3_slam")
+subdirs("turtlebot3/turtlebot3_teleop")
+subdirs("turtlebot3/turtlebot3_description")
