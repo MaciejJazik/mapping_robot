@@ -1,0 +1,37 @@
+//konfiguracja turtlebot 3 i uruchomienie robota
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_fake turtlebot3_fake.launch
+roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+
+//uruchomienie freenecta
+roslaunch freenect_launch freenect.launch
+rosrun rviz rviz
+
+
+maciej@maciej-X411UN:~/catkin_ws$ roslaunch hector_slam_launch tutorial.launch
+
+//run depth img to laserscane 
+maciej@maciej-X411UN:~$ rosrun depthimage_to_laserscan depthimage_to_laserscan image:=camera/depth/image_raw
+//fixed frame:camera_depth_frame
+
+
+maciej@maciej-X411UN:~/catkin_ws$ roslaunch hector_slam_launch tutorial.launch 
+maciej@maciej-X411UN:~/catkin_ws$ roslaunch hector_slam_launch tutorial.launch 
+
+
+
+vi +':wq ++ff=unix' file_with_dos_linebreaks.py
+
+rosrun gmapping slam_gmapping scan:=base_scan
+
+rosrun rqt_tf_tree rqt_tf_tree
+
+
+
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:~/velodyne_plugin/build
+gazebo --verbose ../velodyne.world
+
+!!!!!! działa zarowno set_vel i camera
+locate libDepthCameraPlugin.so /usr/lib/x86_64-linux-gnu/gazebo-9/plugins/libDepthCameraPlugin.so
+. /usr/share/gazebo-9/setup.sh && gazebo -s libgazebo_ros_api_plugin.so --verbose ../my_hol_robot.world
+fixed frame: camera_link
