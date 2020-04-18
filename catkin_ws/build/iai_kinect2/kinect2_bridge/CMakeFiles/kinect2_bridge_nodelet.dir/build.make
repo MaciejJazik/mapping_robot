@@ -146,7 +146,6 @@ kinect2_bridge_nodelet_EXTERNAL_OBJECTS =
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /usr/lib/libPocoFoundation.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /opt/ros/melodic/lib/libroscpp.so
-/home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /opt/ros/melodic/lib/librosconsole.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /opt/ros/melodic/lib/librosconsole_log4cxx.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /opt/ros/melodic/lib/librosconsole_backend_interface.so
@@ -199,7 +198,6 @@ kinect2_bridge_nodelet_EXTERNAL_OBJECTS =
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /home/maciej/freenect2/lib/libfreenect2.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /opt/ros/melodic/lib/libroscpp.so
-/home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /opt/ros/melodic/lib/librosconsole.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /opt/ros/melodic/lib/librosconsole_log4cxx.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_bridge_nodelet.so: /opt/ros/melodic/lib/librosconsole_backend_interface.so

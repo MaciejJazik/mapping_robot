@@ -12,9 +12,6 @@
 #include "std_msgs/Float32.h"
 #include "geometry_msgs/Twist.h"
 
-#define TWIST_VELOCITY_FACTOR 0.3354447601
-#define LINEAR_VELOCITY_FACTOR 0.06650692006
-
 namespace gazebo
 {
 	
@@ -23,9 +20,7 @@ namespace gazebo
   {
 	  
 		/// \brief Constructor
-		public: HolonomousRobotPlugin() {
-			zAxisAngle=0;
-		}
+		public: HolonomousRobotPlugin() {}
 
 		/// \brief The load function is called by Gazebo when the plugin is
 		/// inserted into simulation
@@ -86,15 +81,25 @@ namespace gazebo
 
 		// Create a named topic, and subscribe to it.
 		ros::SubscribeOptions so =
-		  ros::SubscribeOptions::create<geometry_msgs::Twist>(
+		  ros::SubscribeOptions::create<std_msgs::Float32>(
 			  "/" + this->model->GetName() + "/cmd_vel",
 			  2,
 			  boost::bind(&HolonomousRobotPlugin::velCallback, this, _1),
 			  ros::VoidPtr(), &this->rosQueue);
 			  
 		this->rosSub1 = this->rosNode1->subscribe(so);
-		
-		this->velocityPublisher = this->rosNode1->advertise<geometry_msgs::Twist>("/my_hol_robot/geometry_msg", 1000);
+
+		/*this->rosNode2.reset(new ros::NodeHandle("gazebo_client"));
+
+		// Create a named topic, and subscribe to it.
+		so =
+		  ros::SubscribeOptions::create<std_msgs::Float32>(
+			  "/" + this->model->GetName() + "/vel_cmd_right",
+			  2,
+			  boost::bind(&HolonomousRobotPlugin::OnRosMsgR, this, _1),
+			  ros::VoidPtr(), &this->rosQueue);
+			  
+		this->rosSub2 = this->rosNode2->subscribe(so);*/
 		
 		// Spin up the queue helper thread.
 		this->rosQueueThread =
@@ -117,42 +122,51 @@ namespace gazebo
 			  this->jointRight->GetScopedName(), _vel);
 		}
 		
-		void velCallback(const geometry_msgs::TwistConstPtr &_msg)
+		void velCallback(const std_msgs::Float32ConstPtr &_msg)
 		{
-		   this->SetRightWheelVelocity(_msg->linear.x-_msg->angular.z);
-		   this->SetLeftWheelVelocity(_msg->linear.x+_msg->angular.z);
-		   double twistVel = _msg->angular.z*TWIST_VELOCITY_FACTOR;
-		   double linearVel = _msg->linear.x*LINEAR_VELOCITY_FACTOR;
-		   geometry_msgs::Twist velocityData;
-		   velocityData.linear.x = linearVel;
-		   velocityData.linear.y = 0;
-		   velocityData.linear.z = 0;
-		   velocityData.angular.x = 0;
-		   velocityData.angular.y = 0;
-		   velocityData.angular.z = twistVel;
-		   this->velocityPublisher.publish(velocityData);
+		   this->SetRightWheelVelocity(_msg->data);
+		   this->SetLeftWheelVelocity(_msg->data);
 		   
+		}
+		
+		/// \brief Handle an incoming message from ROS
+		/// \param[in] _msg A float value that is used to set the velocity
+		/// of the Velodyne.
+		public: void OnRosMsgL(const std_msgs::Float32ConstPtr &_msg)
+		{
+		  this->SetLeftWheelVelocity(_msg->data);
+		}
+		
+		public: void OnRosMsgR(const std_msgs::Float32ConstPtr &_msg)
+		{
+		  this->SetRightWheelVelocity(_msg->data);
 		}
 
 		/// \brief ROS helper function that processes messages
 		private: void QueueThread()
 		{
 		  static const double timeout = 0.01;
-		  while (this->rosNode1->ok())
+		  while (this->rosNode1->ok())//&&this->rosNode2->ok()
 		  {
 			this->rosQueue.callAvailable(ros::WallDuration(timeout));
 		  }
 		}
 		
-		private: ros::Publisher velocityPublisher;
-		
-		private: float zAxisAngle;
+		/// \brief Handle incoming message
+		/// \param[in] _msg Repurpose a vector3 message. This function will
+		/// only use the x component.
+		/*private: void OnMsg(ConstVector3dPtr &_msg)
+		{
+		  this->SetVelocity(_msg->x());
+		}*/
 		
 		/// \brief A node use for ROS transport
 		private: std::unique_ptr<ros::NodeHandle> rosNode1;
+		//private: std::unique_ptr<ros::NodeHandle> rosNode2;
 
 		/// \brief A ROS subscriber
 		private: ros::Subscriber rosSub1;
+		//private: ros::Subscriber rosSub2;
 
 		/// \brief A ROS callbackqueue that helps process messages
 		private: ros::CallbackQueue rosQueue;

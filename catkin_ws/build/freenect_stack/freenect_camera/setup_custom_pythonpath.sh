@@ -2,4 +2,4 @@
 # generated from dynamic_reconfigure/cmake/setup_custom_pythonpath.sh.in
 
 PYTHONPATH=/home/maciej/catkin_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH
-exec "$@"
+exec /usr/bin/python2 "$@"

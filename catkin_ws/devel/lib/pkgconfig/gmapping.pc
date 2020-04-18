@@ -4,5 +4,5 @@ Name: gmapping
 Description: Description of gmapping
 Version: 1.4.0
 Cflags: 
-Libs: -L/home/maciej/catkin_ws/devel/lib 
+Libs: -L${prefix}/lib 
 Requires: 

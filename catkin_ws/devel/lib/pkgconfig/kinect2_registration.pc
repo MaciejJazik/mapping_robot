@@ -4,5 +4,5 @@ Name: kinect2_registration
 Description: Description of kinect2_registration
 Version: 0.0.1
 Cflags: -I/home/maciej/catkin_ws/src/iai_kinect2/kinect2_registration/include -I/usr/include
-Libs: -L/home/maciej/catkin_ws/devel/lib -lkinect2_registration /usr/lib/x86_64-linux-gnu/libOpenCL.so
+Libs: -L${prefix}/lib -lkinect2_registration /usr/lib/x86_64-linux-gnu/libOpenCL.so
 Requires: 

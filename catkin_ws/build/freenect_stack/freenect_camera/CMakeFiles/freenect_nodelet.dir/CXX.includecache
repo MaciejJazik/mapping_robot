@@ -1549,6 +1549,8 @@ xmlrpcpp/XmlRpcDecl.h
 /opt/ros/melodic/include/xmlrpcpp/xmlrpcpp/XmlRpcDecl.h
 list
 -
+vector
+-
 
 /opt/ros/melodic/include/xmlrpcpp/XmlRpcException.h
 string

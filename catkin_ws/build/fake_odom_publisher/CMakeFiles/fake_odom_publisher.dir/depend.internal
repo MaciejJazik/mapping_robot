@@ -3,9 +3,6 @@
 
 fake_odom_publisher/CMakeFiles/fake_odom_publisher.dir/src/fake_odom_publisher.cpp.o
  /home/maciej/catkin_ws/src/fake_odom_publisher/src/fake_odom_publisher.cpp
- /opt/ros/melodic/include/boost_161_condition_variable.h
- /opt/ros/melodic/include/boost_161_pthread_condition_variable.h
- /opt/ros/melodic/include/boost_161_pthread_condition_variable_fwd.h
  /opt/ros/melodic/include/geometry_msgs/Point.h
  /opt/ros/melodic/include/geometry_msgs/Point32.h
  /opt/ros/melodic/include/geometry_msgs/PointStamped.h

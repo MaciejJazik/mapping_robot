@@ -141,7 +141,6 @@ kinect2_calibration_EXTERNAL_OBJECTS =
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /usr/lib/libPocoFoundation.so
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /usr/lib/x86_64-linux-gnu/libdl.so
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /opt/ros/melodic/lib/libroscpp.so
-/home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /opt/ros/melodic/lib/librosconsole.so
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /opt/ros/melodic/lib/librosconsole_log4cxx.so
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /opt/ros/melodic/lib/librosconsole_backend_interface.so
@@ -193,7 +192,6 @@ kinect2_calibration_EXTERNAL_OBJECTS =
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.3.2.0
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /opt/ros/melodic/lib/libroscpp.so
-/home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /opt/ros/melodic/lib/librosconsole.so
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /opt/ros/melodic/lib/librosconsole_log4cxx.so
 /home/maciej/catkin_ws/devel/lib/kinect2_calibration/kinect2_calibration: /opt/ros/melodic/lib/librosconsole_backend_interface.so

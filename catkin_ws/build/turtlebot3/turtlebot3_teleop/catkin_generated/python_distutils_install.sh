@@ -9,7 +9,6 @@ if [ -n "$DESTDIR" ] ; then
             /bin/echo "otherwise python's distutils will bork things."
             exit 1
     esac
-    DESTDIR_ARG="--root=$DESTDIR"
 fi
 
 echo_and_run() { echo "+ $@" ; "$@" ; }
@@ -29,5 +28,5 @@ echo_and_run /usr/bin/env \
     "/home/maciej/catkin_ws/src/turtlebot3/turtlebot3_teleop/setup.py" \
     build --build-base "/home/maciej/catkin_ws/build/turtlebot3/turtlebot3_teleop" \
     install \
-    $DESTDIR_ARG \
+    --root="${DESTDIR-/}" \
     --install-layout=deb --prefix="/home/maciej/catkin_ws/install" --install-scripts="/home/maciej/catkin_ws/install/bin"

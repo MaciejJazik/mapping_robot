@@ -4,5 +4,5 @@ Name: freenect_launch
 Description: Description of freenect_launch
 Version: 0.4.2
 Cflags: 
-Libs: -L/home/maciej/catkin_ws/devel/lib 
+Libs: -L${prefix}/lib 
 Requires: 

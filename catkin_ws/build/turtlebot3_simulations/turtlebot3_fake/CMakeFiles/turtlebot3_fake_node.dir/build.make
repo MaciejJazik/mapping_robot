@@ -96,7 +96,6 @@ turtlebot3_fake_node_EXTERNAL_OBJECTS =
 /home/maciej/catkin_ws/devel/lib/turtlebot3_fake/turtlebot3_fake_node: /opt/ros/melodic/lib/libmessage_filters.so
 /home/maciej/catkin_ws/devel/lib/turtlebot3_fake/turtlebot3_fake_node: /opt/ros/melodic/lib/libroscpp.so
 /home/maciej/catkin_ws/devel/lib/turtlebot3_fake/turtlebot3_fake_node: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/maciej/catkin_ws/devel/lib/turtlebot3_fake/turtlebot3_fake_node: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/maciej/catkin_ws/devel/lib/turtlebot3_fake/turtlebot3_fake_node: /opt/ros/melodic/lib/libxmlrpcpp.so
 /home/maciej/catkin_ws/devel/lib/turtlebot3_fake/turtlebot3_fake_node: /opt/ros/melodic/lib/libtf2.so
 /home/maciej/catkin_ws/devel/lib/turtlebot3_fake/turtlebot3_fake_node: /opt/ros/melodic/lib/librosconsole.so

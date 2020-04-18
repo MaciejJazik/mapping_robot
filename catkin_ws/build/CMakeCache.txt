@@ -1169,7 +1169,7 @@ freenect_launch_BINARY_DIR:STATIC=/home/maciej/catkin_ws/build/freenect_stack/fr
 freenect_launch_SOURCE_DIR:STATIC=/home/maciej/catkin_ws/src/freenect_stack/freenect_launch
 
 //Dependencies for the target
-freenect_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libcamera_info_manager.so;general;/opt/ros/melodic/lib/libcamera_calibration_parsers.so;general;/opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/melodic/lib/libimage_transport.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libnodeletlib.so;general;/opt/ros/melodic/lib/libbondcpp.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/usr/local/lib/libfreenect.so;general;log4cxx;
+freenect_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libcamera_info_manager.so;general;/opt/ros/melodic/lib/libcamera_calibration_parsers.so;general;/opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/melodic/lib/libimage_transport.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libnodeletlib.so;general;/opt/ros/melodic/lib/libbondcpp.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/usr/local/lib/libfreenect.so;general;log4cxx;
 
 //Value Computed by CMake
 freenect_stack_BINARY_DIR:STATIC=/home/maciej/catkin_ws/build/freenect_stack/freenect_stack
@@ -1356,7 +1356,7 @@ kinect2_bridge_DIR:PATH=/home/maciej/catkin_ws/devel/share/kinect2_bridge/cmake
 kinect2_bridge_SOURCE_DIR:STATIC=/home/maciej/catkin_ws/src/iai_kinect2/kinect2_bridge
 
 //Dependencies for the target
-kinect2_bridge_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libnodeletlib.so;general;/opt/ros/melodic/lib/libbondcpp.so;general;/opt/ros/melodic/lib/libcompressed_depth_image_transport.so;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_shape.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_viz.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_face.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_plot.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_reg.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_text.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0;general;/opt/ros/melodic/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0;general;/opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/melodic/lib/libimage_transport.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;kinect2_registration;general;/usr/lib/x86_64-linux-gnu/libOpenCL.so;general;opencv_calib3d;general;opencv_core;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;/home/maciej/freenect2/lib/libfreenect2.so;
+kinect2_bridge_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libnodeletlib.so;general;/opt/ros/melodic/lib/libbondcpp.so;general;/opt/ros/melodic/lib/libcompressed_depth_image_transport.so;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_shape.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videoio.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_viz.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_aruco.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bgsegm.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_bioinspired.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ccalib.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_datasets.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_dpm.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_face.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_freetype.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_fuzzy.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_hdf.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_line_descriptor.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_optflow.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_phase_unwrapping.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_plot.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_reg.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_rgbd.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_saliency.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_stereo.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_structured_light.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_surface_matching.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_text.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_ximgproc.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.3.2.0;general;/opt/ros/melodic/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.3.2.0;general;/usr/lib/x86_64-linux-gnu/libopencv_imgcodecs.so.3.2.0;general;/opt/ros/melodic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/melodic/lib/libimage_transport.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;kinect2_registration;general;/usr/lib/x86_64-linux-gnu/libOpenCL.so;general;opencv_calib3d;general;opencv_core;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;/home/maciej/freenect2/lib/libfreenect2.so;
 
 //Value Computed by CMake
 kinect2_calibration_BINARY_DIR:STATIC=/home/maciej/catkin_ws/build/iai_kinect2/kinect2_calibration
@@ -1371,7 +1371,7 @@ kinect2_registration_BINARY_DIR:STATIC=/home/maciej/catkin_ws/build/iai_kinect2/
 kinect2_registration_DIR:PATH=/home/maciej/catkin_ws/devel/share/kinect2_registration/cmake
 
 //Dependencies for the target
-kinect2_registration_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;opencv_calib3d;general;opencv_core;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;/usr/lib/x86_64-linux-gnu/libOpenCL.so;
+kinect2_registration_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;opencv_calib3d;general;opencv_core;general;opencv_features2d;general;opencv_flann;general;opencv_highgui;general;opencv_imgcodecs;general;opencv_imgproc;general;opencv_ml;general;opencv_objdetect;general;opencv_photo;general;opencv_shape;general;opencv_stitching;general;opencv_superres;general;opencv_video;general;opencv_videoio;general;opencv_videostab;general;opencv_viz;general;opencv_aruco;general;opencv_bgsegm;general;opencv_bioinspired;general;opencv_ccalib;general;opencv_datasets;general;opencv_dpm;general;opencv_face;general;opencv_freetype;general;opencv_fuzzy;general;opencv_hdf;general;opencv_line_descriptor;general;opencv_optflow;general;opencv_phase_unwrapping;general;opencv_plot;general;opencv_reg;general;opencv_rgbd;general;opencv_saliency;general;opencv_stereo;general;opencv_structured_light;general;opencv_surface_matching;general;opencv_text;general;opencv_ximgproc;general;opencv_xobjdetect;general;opencv_xphoto;general;/usr/lib/x86_64-linux-gnu/libOpenCL.so;
 
 //Value Computed by CMake
 kinect2_registration_SOURCE_DIR:STATIC=/home/maciej/catkin_ws/src/iai_kinect2/kinect2_registration
@@ -1554,7 +1554,7 @@ slam_gmapping_BINARY_DIR:STATIC=/home/maciej/catkin_ws/build/slam_gmapping/slam_
 slam_gmapping_SOURCE_DIR:STATIC=/home/maciej/catkin_ws/src/slam_gmapping/slam_gmapping
 
 //Dependencies for the target
-slam_gmapping_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libnodeletlib.so;general;/opt/ros/melodic/lib/libbondcpp.so;general;/opt/ros/melodic/lib/libutils.so;general;/opt/ros/melodic/lib/libsensor_base.so;general;/opt/ros/melodic/lib/libsensor_odometry.so;general;/opt/ros/melodic/lib/libsensor_range.so;general;/opt/ros/melodic/lib/liblog.so;general;/opt/ros/melodic/lib/libconfigfile.so;general;/opt/ros/melodic/lib/libscanmatcher.so;general;/opt/ros/melodic/lib/libgridfastslam.so;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librosbag_storage.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/libroslz4.so;general;/usr/lib/x86_64-linux-gnu/liblz4.so;
+slam_gmapping_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/melodic/lib/libnodeletlib.so;general;/opt/ros/melodic/lib/libbondcpp.so;general;/opt/ros/melodic/lib/libutils.so;general;/opt/ros/melodic/lib/libsensor_base.so;general;/opt/ros/melodic/lib/libsensor_odometry.so;general;/opt/ros/melodic/lib/libsensor_range.so;general;/opt/ros/melodic/lib/liblog.so;general;/opt/ros/melodic/lib/libconfigfile.so;general;/opt/ros/melodic/lib/libscanmatcher.so;general;/opt/ros/melodic/lib/libgridfastslam.so;general;/opt/ros/melodic/lib/libtf.so;general;/opt/ros/melodic/lib/libtf2_ros.so;general;/opt/ros/melodic/lib/libactionlib.so;general;/opt/ros/melodic/lib/libmessage_filters.so;general;/opt/ros/melodic/lib/libroscpp.so;general;/opt/ros/melodic/lib/libxmlrpcpp.so;general;/opt/ros/melodic/lib/libtf2.so;general;/opt/ros/melodic/lib/libroscpp_serialization.so;general;/opt/ros/melodic/lib/librosbag_storage.so;general;/opt/ros/melodic/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/melodic/lib/librosconsole.so;general;/opt/ros/melodic/lib/librosconsole_log4cxx.so;general;/opt/ros/melodic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/melodic/lib/librostime.so;general;/opt/ros/melodic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/opt/ros/melodic/lib/libroslib.so;general;/opt/ros/melodic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython2.7.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/opt/ros/melodic/lib/libroslz4.so;general;/usr/lib/x86_64-linux-gnu/liblz4.so;
 
 //The directory containing a CMake configuration file for smclib.
 smclib_DIR:PATH=/opt/ros/melodic/share/smclib/cmake
@@ -1679,6 +1679,9 @@ xacro_DIR:PATH=/opt/ros/melodic/share/xacro/cmake
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
 
+//The directory containing a CMake configuration file for yaml.
+yaml_DIR:PATH=yaml_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries
@@ -1694,6 +1697,8 @@ AVCODEC_LDFLAGS_OTHER:INTERNAL=
 AVCODEC_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 AVCODEC_LIBRARIES:INTERNAL=avcodec
 AVCODEC_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: AVCODEC_LIBRARY_avcodec
+AVCODEC_LIBRARY_avcodec-ADVANCED:INTERNAL=1
 AVCODEC_LIBS:INTERNAL=
 AVCODEC_LIBS_L:INTERNAL=
 AVCODEC_LIBS_OTHER:INTERNAL=
@@ -1727,6 +1732,8 @@ AVDEVICE_LDFLAGS_OTHER:INTERNAL=
 AVDEVICE_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 AVDEVICE_LIBRARIES:INTERNAL=avdevice
 AVDEVICE_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: AVDEVICE_LIBRARY_avdevice
+AVDEVICE_LIBRARY_avdevice-ADVANCED:INTERNAL=1
 AVDEVICE_LIBS:INTERNAL=
 AVDEVICE_LIBS_L:INTERNAL=
 AVDEVICE_LIBS_OTHER:INTERNAL=
@@ -1760,6 +1767,8 @@ AVFORMAT_LDFLAGS_OTHER:INTERNAL=
 AVFORMAT_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 AVFORMAT_LIBRARIES:INTERNAL=avformat
 AVFORMAT_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: AVFORMAT_LIBRARY_avformat
+AVFORMAT_LIBRARY_avformat-ADVANCED:INTERNAL=1
 AVFORMAT_LIBS:INTERNAL=
 AVFORMAT_LIBS_L:INTERNAL=
 AVFORMAT_LIBS_OTHER:INTERNAL=
@@ -1793,6 +1802,8 @@ AVUTIL_LDFLAGS_OTHER:INTERNAL=
 AVUTIL_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 AVUTIL_LIBRARIES:INTERNAL=avutil
 AVUTIL_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: AVUTIL_LIBRARY_avutil
+AVUTIL_LIBRARY_avutil-ADVANCED:INTERNAL=1
 AVUTIL_LIBS:INTERNAL=
 AVUTIL_LIBS_L:INTERNAL=
 AVUTIL_LIBS_OTHER:INTERNAL=
@@ -2052,10 +2063,16 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 COMPILER_SUPPORTS_CXX0X:INTERNAL=1
 //Test COMPILER_SUPPORTS_CXX11
 COMPILER_SUPPORTS_CXX11:INTERNAL=1
+//ADVANCED property for variable: CPPZMQ_INCLUDE_DIRS
+CPPZMQ_INCLUDE_DIRS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CURL_INCLUDE_DIR
 CURL_INCLUDE_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CURL_LIBRARY
 CURL_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DL_INCLUDE_DIRS
+DL_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DL_LIBRARIES
+DL_LIBRARIES-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DSSDK_LIBRARY_DepthSense
 DSSDK_LIBRARY_DepthSense-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: DSSDK_LIBRARY_DepthSensePlugins
@@ -2149,7 +2166,7 @@ FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding Protobuf
 FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread;-lpthread][/usr/include][v3.0.0(2.3.0)]
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python2][v2.7.15()]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python2][v2.7.17()]
 //Details about finding RTABMap
 FIND_PACKAGE_MESSAGE_DETAILS_RTABMap:INTERNAL=[/opt/ros/melodic/lib/librtabmap_core.so;/opt/ros/melodic/lib/librtabmap_utilite.so;/opt/ros/melodic/lib/librtabmap_gui.so;/usr/lib/x86_64-linux-gnu/libz.so;/opt/ros/melodic/lib/libg2o_core.so;/opt/ros/melodic/lib/libg2o_types_slam2d.so;/opt/ros/melodic/lib/libg2o_types_slam3d.so;/opt/ros/melodic/lib/libg2o_types_sba.so;/opt/ros/melodic/lib/libg2o_stuff.so;/opt/ros/melodic/lib/libg2o_solver_csparse.so;/opt/ros/melodic/lib/libg2o_csparse_extension.so;/usr/lib/x86_64-linux-gnu/libcxsparse.so;/opt/ros/melodic/lib/libg2o_solver_cholmod.so;/usr/lib/x86_64-linux-gnu/libcholmod.so;/usr/local/lib/libfreenect.so;/usr/local/lib/libfreenect_sync.so;/usr/lib/libOpenNI2.so;/usr/lib/x86_64-linux-gnu/libdc1394.so;/opt/ros/melodic/lib/liboctomap.so;/opt/ros/melodic/lib/liboctomath.so][/usr/local/lib/rtabmap-0.19/../../include/rtabmap-0.19][v(0.19.5)]
 //Details about finding SWSCALE
@@ -2178,6 +2195,10 @@ FIND_PACKAGE_MESSAGE_DETAILS_qhull:INTERNAL=[/usr/lib/x86_64-linux-gnu/libqhull.
 FREEIMAGE_COMPILES:INTERNAL=TRUE
 //Result of TRY_RUN
 FREEIMAGE_RUNS:INTERNAL=1
+//ADVANCED property for variable: FreeImage_INCLUDE_DIRS
+FreeImage_INCLUDE_DIRS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: FreeImage_LIBRARIES
+FreeImage_LIBRARIES-ADVANCED:INTERNAL=1
 GMOCK_FROM_SOURCE_FOUND:INTERNAL=TRUE
 GMOCK_FROM_SOURCE_INCLUDE_DIRS:INTERNAL=/usr/src/googletest/googlemock/include
 GMOCK_FROM_SOURCE_LIBRARIES:INTERNAL=gmock
@@ -2208,6 +2229,16 @@ GTS_LDFLAGS_OTHER:INTERNAL=-pthread;-Wl,--export-dynamic;-pthread
 GTS_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 GTS_LIBRARIES:INTERNAL=gts;m;gthread-2.0;gmodule-2.0;glib-2.0
 GTS_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: GTS_LIBRARY_glib-2.0
+GTS_LIBRARY_glib-2.0-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTS_LIBRARY_gmodule-2.0
+GTS_LIBRARY_gmodule-2.0-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTS_LIBRARY_gthread-2.0
+GTS_LIBRARY_gthread-2.0-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTS_LIBRARY_gts
+GTS_LIBRARY_gts-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GTS_LIBRARY_m
+GTS_LIBRARY_m-ADVANCED:INTERNAL=1
 GTS_LIBS:INTERNAL=
 GTS_LIBS_L:INTERNAL=
 GTS_LIBS_OTHER:INTERNAL=
@@ -2241,6 +2272,8 @@ JSONCPP_LDFLAGS_OTHER:INTERNAL=
 JSONCPP_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 JSONCPP_LIBRARIES:INTERNAL=jsoncpp
 JSONCPP_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: JSONCPP_LIBRARY_jsoncpp
+JSONCPP_LIBRARY_jsoncpp-ADVANCED:INTERNAL=1
 JSONCPP_LIBS:INTERNAL=
 JSONCPP_LIBS_L:INTERNAL=
 JSONCPP_LIBS_OTHER:INTERNAL=
@@ -2844,6 +2877,8 @@ SWSCALE_LDFLAGS_OTHER:INTERNAL=
 SWSCALE_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 SWSCALE_LIBRARIES:INTERNAL=swscale
 SWSCALE_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: SWSCALE_LIBRARY_swscale
+SWSCALE_LIBRARY_swscale-ADVANCED:INTERNAL=1
 SWSCALE_LIBS:INTERNAL=
 SWSCALE_LIBS_L:INTERNAL=
 SWSCALE_LIBS_OTHER:INTERNAL=
@@ -2881,6 +2916,8 @@ TINYXML2_LDFLAGS_OTHER:INTERNAL=
 TINYXML2_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 TINYXML2_LIBRARIES:INTERNAL=tinyxml2
 TINYXML2_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: TINYXML2_LIBRARY_tinyxml2
+TINYXML2_LIBRARY_tinyxml2-ADVANCED:INTERNAL=1
 TINYXML2_LIBS:INTERNAL=
 TINYXML2_LIBS_L:INTERNAL=
 TINYXML2_LIBS_OTHER:INTERNAL=
@@ -2914,6 +2951,8 @@ UUID_LDFLAGS_OTHER:INTERNAL=
 UUID_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 UUID_LIBRARIES:INTERNAL=uuid
 UUID_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: UUID_LIBRARY_uuid
+UUID_LIBRARY_uuid-ADVANCED:INTERNAL=1
 UUID_LIBS:INTERNAL=
 UUID_LIBS_L:INTERNAL=
 UUID_LIBS_OTHER:INTERNAL=
@@ -2947,6 +2986,8 @@ YAML_LDFLAGS_OTHER:INTERNAL=
 YAML_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 YAML_LIBRARIES:INTERNAL=yaml
 YAML_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: YAML_LIBRARY_yaml
+YAML_LIBRARY_yaml-ADVANCED:INTERNAL=1
 YAML_LIBS:INTERNAL=
 YAML_LIBS_L:INTERNAL=
 YAML_LIBS_OTHER:INTERNAL=
@@ -2980,6 +3021,10 @@ ZIP_LDFLAGS_OTHER:INTERNAL=
 ZIP_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 ZIP_LIBRARIES:INTERNAL=zip;z
 ZIP_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: ZIP_LIBRARY_z
+ZIP_LIBRARY_z-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZIP_LIBRARY_zip
+ZIP_LIBRARY_zip-ADVANCED:INTERNAL=1
 ZIP_LIBS:INTERNAL=
 ZIP_LIBS_L:INTERNAL=
 ZIP_LIBS_OTHER:INTERNAL=
@@ -3013,6 +3058,8 @@ ZeroMQ_LDFLAGS_OTHER:INTERNAL=
 ZeroMQ_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 ZeroMQ_LIBRARIES:INTERNAL=zmq
 ZeroMQ_LIBRARY_DIRS:INTERNAL=
+//ADVANCED property for variable: ZeroMQ_LIBRARY_zmq
+ZeroMQ_LIBRARY_zmq-ADVANCED:INTERNAL=1
 ZeroMQ_LIBS:INTERNAL=
 ZeroMQ_LIBS_L:INTERNAL=
 ZeroMQ_LIBS_OTHER:INTERNAL=

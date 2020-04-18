@@ -89,6 +89,41 @@ struct SensorState_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(BUMPER_FORWARD)
+  #undef BUMPER_FORWARD
+#endif
+#if defined(_WIN32) && defined(BUMPER_BACKWARD)
+  #undef BUMPER_BACKWARD
+#endif
+#if defined(_WIN32) && defined(CLIFF)
+  #undef CLIFF
+#endif
+#if defined(_WIN32) && defined(SONAR)
+  #undef SONAR
+#endif
+#if defined(_WIN32) && defined(ILLUMINATION)
+  #undef ILLUMINATION
+#endif
+#if defined(_WIN32) && defined(BUTTON0)
+  #undef BUTTON0
+#endif
+#if defined(_WIN32) && defined(BUTTON1)
+  #undef BUTTON1
+#endif
+#if defined(_WIN32) && defined(ERROR_LEFT_MOTOR)
+  #undef ERROR_LEFT_MOTOR
+#endif
+#if defined(_WIN32) && defined(ERROR_RIGHT_MOTOR)
+  #undef ERROR_RIGHT_MOTOR
+#endif
+#if defined(_WIN32) && defined(TORQUE_ON)
+  #undef TORQUE_ON
+#endif
+#if defined(_WIN32) && defined(TORQUE_OFF)
+  #undef TORQUE_OFF
+#endif
+
   enum {
     BUMPER_FORWARD = 1u,
     BUMPER_BACKWARD = 2u,
@@ -147,6 +182,30 @@ ros::message_operations::Printer< ::turtlebot3_msgs::SensorState_<ContainerAlloc
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::turtlebot3_msgs::SensorState_<ContainerAllocator1> & lhs, const ::turtlebot3_msgs::SensorState_<ContainerAllocator2> & rhs)
+{
+  return lhs.header == rhs.header &&
+    lhs.bumper == rhs.bumper &&
+    lhs.cliff == rhs.cliff &&
+    lhs.sonar == rhs.sonar &&
+    lhs.illumination == rhs.illumination &&
+    lhs.led == rhs.led &&
+    lhs.button == rhs.button &&
+    lhs.torque == rhs.torque &&
+    lhs.left_encoder == rhs.left_encoder &&
+    lhs.right_encoder == rhs.right_encoder &&
+    lhs.battery == rhs.battery;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::turtlebot3_msgs::SensorState_<ContainerAllocator1> & lhs, const ::turtlebot3_msgs::SensorState_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace turtlebot3_msgs
 
 namespace ros
@@ -154,12 +213,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': True}
-// {'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg'], 'turtlebot3_msgs': ['/home/maciej/catkin_ws/src/turtlebot3_msgs/msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

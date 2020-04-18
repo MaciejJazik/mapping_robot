@@ -4,5 +4,5 @@ Name: fake_odom_publisher
 Description: Description of fake_odom_publisher
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/maciej/catkin_ws/install/lib 
+Libs: -L${prefix}/lib 
 Requires: 

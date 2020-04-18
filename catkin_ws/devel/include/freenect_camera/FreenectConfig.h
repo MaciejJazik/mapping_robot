@@ -69,7 +69,7 @@ namespace freenect_camera
         field(a_f)
       {}
 
-      T (FreenectConfig::* field);
+      T FreenectConfig::* field;
 
       virtual void clamp(FreenectConfig &config, const FreenectConfig &max, const FreenectConfig &min) const
       {
@@ -216,7 +216,7 @@ namespace freenect_camera
         }
       }
 
-      T (PT::* field);
+      T PT::* field;
       std::vector<FreenectConfig::AbstractGroupDescriptionConstPtr> groups;
     };
 

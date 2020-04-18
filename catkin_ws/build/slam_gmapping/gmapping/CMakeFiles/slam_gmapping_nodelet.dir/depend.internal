@@ -4,9 +4,6 @@
 slam_gmapping/gmapping/CMakeFiles/slam_gmapping_nodelet.dir/src/nodelet.cpp.o
  /home/maciej/catkin_ws/src/slam_gmapping/gmapping/src/nodelet.cpp
  /home/maciej/catkin_ws/src/slam_gmapping/gmapping/src/slam_gmapping.h
- /opt/ros/melodic/include/boost_161_condition_variable.h
- /opt/ros/melodic/include/boost_161_pthread_condition_variable.h
- /opt/ros/melodic/include/boost_161_pthread_condition_variable_fwd.h
  /opt/ros/melodic/include/class_loader/class_loader.hpp
  /opt/ros/melodic/include/class_loader/class_loader_core.hpp
  /opt/ros/melodic/include/class_loader/exceptions.hpp
@@ -167,9 +164,6 @@ slam_gmapping/gmapping/CMakeFiles/slam_gmapping_nodelet.dir/src/nodelet.cpp.o
 slam_gmapping/gmapping/CMakeFiles/slam_gmapping_nodelet.dir/src/slam_gmapping.cpp.o
  /home/maciej/catkin_ws/src/slam_gmapping/gmapping/src/slam_gmapping.cpp
  /home/maciej/catkin_ws/src/slam_gmapping/gmapping/src/slam_gmapping.h
- /opt/ros/melodic/include/boost_161_condition_variable.h
- /opt/ros/melodic/include/boost_161_pthread_condition_variable.h
- /opt/ros/melodic/include/boost_161_pthread_condition_variable_fwd.h
  /opt/ros/melodic/include/class_loader/class_loader.hpp
  /opt/ros/melodic/include/class_loader/class_loader_core.hpp
  /opt/ros/melodic/include/class_loader/exceptions.hpp

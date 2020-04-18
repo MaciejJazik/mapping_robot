@@ -98,7 +98,6 @@ freenect_nodelet_EXTERNAL_OBJECTS =
 /home/maciej/catkin_ws/devel/lib/libfreenect_nodelet.so: /opt/ros/melodic/lib/libnodeletlib.so
 /home/maciej/catkin_ws/devel/lib/libfreenect_nodelet.so: /opt/ros/melodic/lib/libbondcpp.so
 /home/maciej/catkin_ws/devel/lib/libfreenect_nodelet.so: /opt/ros/melodic/lib/libroscpp.so
-/home/maciej/catkin_ws/devel/lib/libfreenect_nodelet.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/maciej/catkin_ws/devel/lib/libfreenect_nodelet.so: /opt/ros/melodic/lib/libxmlrpcpp.so
 /home/maciej/catkin_ws/devel/lib/libfreenect_nodelet.so: /opt/ros/melodic/lib/libroscpp_serialization.so
 /home/maciej/catkin_ws/devel/lib/libfreenect_nodelet.so: /opt/ros/melodic/lib/libclass_loader.so

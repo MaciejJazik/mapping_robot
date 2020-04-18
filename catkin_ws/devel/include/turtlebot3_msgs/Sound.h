@@ -38,6 +38,26 @@ struct Sound_
 
 
 
+// reducing the odds to have name collisions with Windows.h 
+#if defined(_WIN32) && defined(OFF)
+  #undef OFF
+#endif
+#if defined(_WIN32) && defined(ON)
+  #undef ON
+#endif
+#if defined(_WIN32) && defined(LOW_BATTERY)
+  #undef LOW_BATTERY
+#endif
+#if defined(_WIN32) && defined(ERROR)
+  #undef ERROR
+#endif
+#if defined(_WIN32) && defined(BUTTON1)
+  #undef BUTTON1
+#endif
+#if defined(_WIN32) && defined(BUTTON2)
+  #undef BUTTON2
+#endif
+
   enum {
     OFF = 0u,
     ON = 1u,
@@ -81,6 +101,20 @@ ros::message_operations::Printer< ::turtlebot3_msgs::Sound_<ContainerAllocator> 
 return s;
 }
 
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator==(const ::turtlebot3_msgs::Sound_<ContainerAllocator1> & lhs, const ::turtlebot3_msgs::Sound_<ContainerAllocator2> & rhs)
+{
+  return lhs.value == rhs.value;
+}
+
+template<typename ContainerAllocator1, typename ContainerAllocator2>
+bool operator!=(const ::turtlebot3_msgs::Sound_<ContainerAllocator1> & lhs, const ::turtlebot3_msgs::Sound_<ContainerAllocator2> & rhs)
+{
+  return !(lhs == rhs);
+}
+
+
 } // namespace turtlebot3_msgs
 
 namespace ros
@@ -88,12 +122,6 @@ namespace ros
 namespace message_traits
 {
 
-
-
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
-// {'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg'], 'turtlebot3_msgs': ['/home/maciej/catkin_ws/src/turtlebot3_msgs/msg']}
-
-// !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
 
 
 

@@ -144,7 +144,6 @@ kinect2_registration_EXTERNAL_OBJECTS =
 /home/maciej/catkin_ws/devel/lib/libkinect2_registration.so: iai_kinect2/kinect2_registration/CMakeFiles/kinect2_registration.dir/build.make
 /home/maciej/catkin_ws/devel/lib/libkinect2_registration.so: /opt/ros/melodic/lib/libroscpp.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_registration.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/maciej/catkin_ws/devel/lib/libkinect2_registration.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_registration.so: /opt/ros/melodic/lib/librosconsole.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_registration.so: /opt/ros/melodic/lib/librosconsole_log4cxx.so
 /home/maciej/catkin_ws/devel/lib/libkinect2_registration.so: /opt/ros/melodic/lib/librosconsole_backend_interface.so

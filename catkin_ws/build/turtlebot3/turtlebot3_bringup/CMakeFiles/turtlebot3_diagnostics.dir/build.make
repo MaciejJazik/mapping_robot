@@ -92,7 +92,6 @@ turtlebot3_diagnostics_EXTERNAL_OBJECTS =
 /home/maciej/catkin_ws/devel/lib/turtlebot3_bringup/turtlebot3_diagnostics: turtlebot3/turtlebot3_bringup/CMakeFiles/turtlebot3_diagnostics.dir/build.make
 /home/maciej/catkin_ws/devel/lib/turtlebot3_bringup/turtlebot3_diagnostics: /opt/ros/melodic/lib/libroscpp.so
 /home/maciej/catkin_ws/devel/lib/turtlebot3_bringup/turtlebot3_diagnostics: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/maciej/catkin_ws/devel/lib/turtlebot3_bringup/turtlebot3_diagnostics: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/maciej/catkin_ws/devel/lib/turtlebot3_bringup/turtlebot3_diagnostics: /opt/ros/melodic/lib/librosconsole.so
 /home/maciej/catkin_ws/devel/lib/turtlebot3_bringup/turtlebot3_diagnostics: /opt/ros/melodic/lib/librosconsole_log4cxx.so
 /home/maciej/catkin_ws/devel/lib/turtlebot3_bringup/turtlebot3_diagnostics: /opt/ros/melodic/lib/librosconsole_backend_interface.so

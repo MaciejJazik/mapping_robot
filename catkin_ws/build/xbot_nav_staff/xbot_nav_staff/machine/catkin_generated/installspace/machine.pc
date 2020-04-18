@@ -4,5 +4,5 @@ Name: machine
 Description: Description of machine
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/maciej/catkin_ws/install/lib 
+Libs: -L${prefix}/lib 
 Requires: 
