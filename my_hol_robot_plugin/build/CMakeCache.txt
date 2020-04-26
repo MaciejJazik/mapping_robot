@@ -619,6 +619,9 @@ gazebo_proto_msgs_lib:FILEPATH=/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so
 //The directory containing a CMake configuration file for ignition-cmake0.
 ignition-cmake0_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-cmake0
 
+//The directory containing a CMake configuration file for ignition-cmake2.
+ignition-cmake2_DIR:PATH=/usr/share/cmake/ignition-cmake2
+
 //The directory containing a CMake configuration file for ignition-common1.
 ignition-common1_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-common1
 
@@ -627,6 +630,9 @@ ignition-fuel_tools1_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-fuel_tool
 
 //The directory containing a CMake configuration file for ignition-math4.
 ignition-math4_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-math4
+
+//The directory containing a CMake configuration file for ignition-math6.
+ignition-math6_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-math6
 
 //The directory containing a CMake configuration file for ignition-msgs1.
 ignition-msgs1_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/ignition-msgs1

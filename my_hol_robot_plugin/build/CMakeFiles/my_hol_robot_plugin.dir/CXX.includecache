@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /home/maciej/my_hol_robot_plugin/my_hol_robot_plugin.cc
+functional
+-
 gazebo/gazebo.hh
 -
 gazebo/physics/physics.hh
@@ -16,6 +18,8 @@ gazebo/transport/transport.hh
 gazebo/msgs/msgs.hh
 -
 thread
+-
+stdlib.h
 -
 ros/ros.h
 /home/maciej/my_hol_robot_plugin/ros/ros.h
@@ -27,6 +31,12 @@ std_msgs/Float32.h
 /home/maciej/my_hol_robot_plugin/std_msgs/Float32.h
 geometry_msgs/Twist.h
 /home/maciej/my_hol_robot_plugin/geometry_msgs/Twist.h
+gazebo/util/system.hh
+/home/maciej/my_hol_robot_plugin/gazebo/util/system.hh
+gazebo/transport/TransportTypes.hh
+/home/maciej/my_hol_robot_plugin/gazebo/transport/TransportTypes.hh
+gazebo/common/Plugin.hh
+/home/maciej/my_hol_robot_plugin/gazebo/common/Plugin.hh
 
 /opt/ros/melodic/include/geometry_msgs/Twist.h
 string

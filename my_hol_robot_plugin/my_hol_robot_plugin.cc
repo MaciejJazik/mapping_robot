@@ -1,19 +1,27 @@
 #ifndef _HOLONOMOUS_ROBOT_PLUGIN_HH_
 #define _HOLONOMOUS_ROBOT_PLUGIN_HH_
 
+#include <functional>
 #include <gazebo/gazebo.hh>
 #include <gazebo/physics/physics.hh>
 #include <gazebo/transport/transport.hh>
 #include <gazebo/msgs/msgs.hh>
 #include <thread>
+#include <stdlib.h>
 #include "ros/ros.h"
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
 #include "std_msgs/Float32.h"
 #include "geometry_msgs/Twist.h"
+#include "gazebo/util/system.hh"
+#include "gazebo/transport/TransportTypes.hh"
+#include "gazebo/common/Plugin.hh"
 
-#define TWIST_VELOCITY_FACTOR 0.3354447601
-#define LINEAR_VELOCITY_FACTOR 0.06650692006
+#define TWIST_VELOCITY_FACTOR 0.35095316
+#define LINEAR_VELOCITY_FACTOR 0.06993007
+#define PI 3.14159265359
+
+enum {LEFT, RIGHT};
 
 namespace gazebo
 {
@@ -23,9 +31,7 @@ namespace gazebo
   {
 	  
 		/// \brief Constructor
-		public: HolonomousRobotPlugin() {
-			zAxisAngle=0;
-		}
+		public: HolonomousRobotPlugin() {}
 
 		/// \brief The load function is called by Gazebo when the plugin is
 		/// inserted into simulation
@@ -65,8 +71,11 @@ namespace gazebo
 			  this->jointRight->GetScopedName(), this->pid);
 
 		// Default to zero velocity
-		double LeftWheelVelocity = 0;
-		double RightWheelVelocity = 0;
+		LeftWheelVelocity = 0;
+		RightWheelVelocity = 0;
+		loopsWithoutPublishingVelocityData=0;
+		avg_linear_vel=0;
+		avg_twist_vel=0;
 
 		this->SetLeftWheelVelocity(LeftWheelVelocity);
 		this->SetRightWheelVelocity(RightWheelVelocity);
@@ -100,29 +109,13 @@ namespace gazebo
 		this->rosQueueThread =
 		  std::thread(std::bind(&HolonomousRobotPlugin::QueueThread, this));
     }
-	
-	/// \brief Set the velocity of the Velodyne
-		/// \param[in] _vel New target velocity
-		public: void SetLeftWheelVelocity(const double &_vel)
-		{
-		  // Set the joint's target velocity.
-		  this->model->GetJointController()->SetVelocityTarget(
-			  this->jointLeft->GetScopedName(), _vel);
-		}
-		
-		public: void SetRightWheelVelocity(const double &_vel)
-		{
-		  // Set the joint's target velocity.
-		  this->model->GetJointController()->SetVelocityTarget(
-			  this->jointRight->GetScopedName(), _vel);
-		}
 		
 		void velCallback(const geometry_msgs::TwistConstPtr &_msg)
 		{
 		   this->SetRightWheelVelocity(_msg->linear.x-_msg->angular.z);
 		   this->SetLeftWheelVelocity(_msg->linear.x+_msg->angular.z);
-		   double twistVel = _msg->angular.z*TWIST_VELOCITY_FACTOR;
-		   double linearVel = _msg->linear.x*LINEAR_VELOCITY_FACTOR;
+		   double twistVel =(avg_twist_vel/(double)loopsWithoutPublishingVelocityData) * TWIST_VELOCITY_FACTOR;
+		   double linearVel = (avg_linear_vel/(double)loopsWithoutPublishingVelocityData) * LINEAR_VELOCITY_FACTOR;
 		   geometry_msgs::Twist velocityData;
 		   velocityData.linear.x = linearVel;
 		   velocityData.linear.y = 0;
@@ -131,22 +124,76 @@ namespace gazebo
 		   velocityData.angular.y = 0;
 		   velocityData.angular.z = twistVel;
 		   this->velocityPublisher.publish(velocityData);
+		   loopsWithoutPublishingVelocityData=0;
+		   avg_linear_vel=0;
+		   avg_twist_vel=0;
 		   
+		}
+
+
+
+		/// \brief Set the velocity of the Velodyne
+		/// \param[in] _vel New target velocity
+		public: void SetLeftWheelVelocity(const double &_vel)
+		{
+		  // Set the joint's target velocity.
+		  LeftWheelVelocity=_vel;
+			this->model->GetJointController()->SetVelocityTarget(
+				this->jointLeft->GetScopedName(), _vel);
+		}
+		
+		public: void SetRightWheelVelocity(const double &_vel)
+		{
+		  // Set the joint's target velocity.
+		  RightWheelVelocity=_vel;
+			this->model->GetJointController()->SetVelocityTarget(
+				this->jointRight->GetScopedName(), _vel);
 		}
 
 		/// \brief ROS helper function that processes messages
 		private: void QueueThread()
 		{
+			double current_angle_L;
+			double current_angle_R;
+			double current_vel_L;
+			double current_vel_R;
 		  static const double timeout = 0.01;
 		  while (this->rosNode1->ok())
 		  {
 			this->rosQueue.callAvailable(ros::WallDuration(timeout));
+			current_angle_L = this->jointLeft->Position(0);
+			current_angle_R = this->jointRight->Position(0);
+			current_vel_L = this->jointLeft->GetVelocity(0);
+			current_vel_R = this->jointRight->GetVelocity(0);
+			if(LeftWheelVelocity==0&&RightWheelVelocity==0)
+			{
+				this->jointRight->SetPosition(0,current_angle_R);
+				this->jointLeft->SetPosition(0,current_angle_L);
+			}
+			else
+			{
+				if(current_vel_L>0&&current_vel_R<0)
+					avg_twist_vel+=(current_vel_L-current_vel_R)/2;
+				else if(current_vel_L<0&&current_vel_R>0)
+					avg_twist_vel-=(abs(current_vel_R)+abs(current_vel_L))/2;
+				else
+					avg_linear_vel+=(current_vel_L+current_vel_R)/2;
+			}
+			
+			loopsWithoutPublishingVelocityData++;
+			if(avg_twist_vel!=0||avg_linear_vel!=0)
+				std::cerr<<"avg twist velocity: "<<(avg_twist_vel/(double)loopsWithoutPublishingVelocityData)<<" avg lin velocity: "<< (avg_linear_vel/(double)loopsWithoutPublishingVelocityData)<<"\n";
 		  }
 		}
 		
-		private: ros::Publisher velocityPublisher;
 		
-		private: float zAxisAngle;
+		private: double avg_twist_vel;
+		private: double avg_linear_vel;
+		private: int loopsWithoutPublishingVelocityData;
+		private: double LeftWheelVelocity;
+		private: double RightWheelVelocity;
+		
+		private: ros::Publisher velocityPublisher;
 		
 		/// \brief A node use for ROS transport
 		private: std::unique_ptr<ros::NodeHandle> rosNode1;
@@ -176,7 +223,6 @@ namespace gazebo
 	/// \brief A PID controller for the joint.
 	private: common::PID pid;
   };
-
   // Tell Gazebo about this plugin, so that Gazebo can call Load on this plugin.
   GZ_REGISTER_MODEL_PLUGIN(HolonomousRobotPlugin)
 }
