@@ -33,7 +33,7 @@ void cmd_vel_callback(const geometry_msgs::Twist& vel_cmd)
     vth = vel_cmd.angular.z;
 	
     msg_received = true;
-    ROS_INFO("Recieved gemoetry_msgs message: vLinear [%f]; vTheta [%f]", vLinear, vth);
+    //ROS_INFO("Recieved gemoetry_msgs message: vLinear [%f]; vTheta [%f]", vLinear, vth);
 }
 
 int main(int argc, char** argv)
@@ -93,7 +93,7 @@ int main(int argc, char** argv)
 			x += delta_x;
             y += delta_y;
 
-			ROS_INFO("counted values: x [%f]; y [%f]; theta [%f]", x, y, th);
+			//ROS_INFO("counted values: x [%f]; y [%f]; theta [%f]", x, y, th);
             msg_received = false;
 			//last_vx=vx;
 			//last_vy=vy;
@@ -140,7 +140,7 @@ int main(int argc, char** argv)
         delta_trans.transform.rotation = delta_quat;
 
         // DEBUG delta_frame TF
-        ROS_DEBUG("Sending TF: px [%f]; py [%f] | qx [%f]; qy [%f]; qz [%f]; qw [%f] | from [%s] to [%s] \n",
+		ROS_DEBUG("Sending TF: px [%f]; py [%f] | qx [%f]; qy [%f]; qz [%f]; qw [%f] | from [%s] to [%s] \n",
                   delta_trans.transform.translation.x, delta_trans.transform.translation.y,
                   delta_trans.transform.rotation.x, delta_trans.transform.rotation.y,
                   delta_trans.transform.rotation.z, delta_trans.transform.rotation.w,

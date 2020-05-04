@@ -181,8 +181,8 @@ namespace gazebo
 			}
 			
 			loopsWithoutPublishingVelocityData++;
-			if(avg_twist_vel!=0||avg_linear_vel!=0)
-				std::cerr<<"avg twist velocity: "<<(avg_twist_vel/(double)loopsWithoutPublishingVelocityData)<<" avg lin velocity: "<< (avg_linear_vel/(double)loopsWithoutPublishingVelocityData)<<"\n";
+//			if(avg_twist_vel!=0||avg_linear_vel!=0)
+//				std::cerr<<"avg twist velocity: "<<(avg_twist_vel/(double)loopsWithoutPublishingVelocityData)<<" avg lin velocity: "<< (avg_linear_vel/(double)loopsWithoutPublishingVelocityData)<<"\n";
 		  }
 		}
 		
