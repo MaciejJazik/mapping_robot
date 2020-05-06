@@ -21,7 +21,7 @@ int main(int argc, char** argv)
 
     broadcaster.sendTransform(
       tf::StampedTransform(
-        tf::Transform(tf::Quaternion(tf::createQuaternionFromRPY(1.57, 0.0, 1.57)), tf::Vector3(0.2, 0.0, 0.1)),
+        tf::Transform(tf::Quaternion(tf::createQuaternionFromRPY(1.57, 0.0, 1.57)), tf::Vector3(-0.2, 0.0, 0.1)),
         ros::Time::now(),"base_link", "wheel_left"));
 
     broadcaster.sendTransform(
