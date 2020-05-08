@@ -1,37 +1,32 @@
-//konfiguracja turtlebot 3 i uruchomienie robota
-export TURTLEBOT3_MODEL=burger
-roslaunch turtlebot3_fake turtlebot3_fake.launch
-roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch
+po uruchomieniu nowego okna w terminalu wywołaj komendę:
+source catkin_ws/devel/setup.bash
 
-//uruchomienie freenecta
-roslaunch freenect_launch freenect.launch
-rosrun rviz rviz
+okno 1.//uruchom ros
+roscore
 
+okno 2.//srodowisko symulacyjne
+cd my_hol_robot_plugin/build/
+./run_my_world.sh 
 
-maciej@maciej-X411UN:~/catkin_ws$ roslaunch hector_slam_launch tutorial.launch
+okno 3. //przeliczanie odometrii
+roslaunch fake_odom_publisher youbot_fake_odom.launch
 
-//run depth img to laserscane 
-maciej@maciej-X411UN:~$ rosrun depthimage_to_laserscan depthimage_to_laserscan image:=camera/depth/image_raw
-//fixed frame:camera_depth_frame
+okno 4. //ustawienie transformat pomiędzy elementami robota
+rosrun robot_setup_tf robot_state_publisher
 
+okno 5. //konwersja chmury punktów na płaski skan laserowy
+rosrun depthimage_to_laserscan depthimage_to_laserscan image:=camera/depth/image_raw
 
-maciej@maciej-X411UN:~/catkin_ws$ roslaunch hector_slam_launch tutorial.launch 
-maciej@maciej-X411UN:~/catkin_ws$ roslaunch hector_slam_launch tutorial.launch 
+okno 6.
+rosrun gmapping slam_gmapping scan:=base_scan // or scan:=camera_link?
 
+pomocne funkcje:
 
+//sterowanie robotem przy pomocy klawiatury
+rosrun key_teleop_robot key_teleop_robot.py
 
-vi +':wq ++ff=unix' file_with_dos_linebreaks.py
-
-rosrun gmapping slam_gmapping scan:=base_scan
-
+//wizualizacja drzewa transformat
 rosrun rqt_tf_tree rqt_tf_tree
 
-
-
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:~/velodyne_plugin/build
-gazebo --verbose ../velodyne.world
-
-!!!!!! działa zarowno set_vel i camera
-locate libDepthCameraPlugin.so /usr/lib/x86_64-linux-gnu/gazebo-9/plugins/libDepthCameraPlugin.so
-. /usr/share/gazebo-9/setup.sh && gazebo -s libgazebo_ros_api_plugin.so --verbose ../my_hol_robot.world
-fixed frame: camera_link
+//narzędzie do wizualizacji 3D (ustaw base_scan jako fixed_frame)
+rviz rviz

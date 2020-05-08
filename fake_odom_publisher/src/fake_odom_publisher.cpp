@@ -93,7 +93,7 @@ int main(int argc, char** argv)
 			x += delta_x;
             y += delta_y;
 
-			//ROS_INFO("counted values: x [%f]; y [%f]; theta [%f]", x, y, th);
+			ROS_INFO("counted values: x [%f]; y [%f]; theta [%f]", x, y, th);
             msg_received = false;
 			//last_vx=vx;
 			//last_vy=vy;
