@@ -21,7 +21,7 @@ okno 5. //konwersja chmury punktów na płaski skan laserowy
 rosrun depthimage_to_laserscan depthimage_to_laserscan image:=camera/depth/image_raw
 
 okno 6.
-rosrun gmapping slam_gmapping scan:=base_scan // or scan:=camera_link?
+rosrun gmapping slam_gmapping
 
 pomocne funkcje:
 
