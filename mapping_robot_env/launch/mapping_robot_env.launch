@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="paused" default="false"/>
+  <arg name="use_sim_time" default="true"/>
+  <arg name="gui" default="true"/>
+  <arg name="headless" default="false"/>
+  <arg name="debug" default="false"/>
+  <arg name="verbose" default="false"/>
+  <arg name="world_name" default="/home/maciej/my_hol_robot_plugin/my_hol_robot.world"/>
+  <!--<arg name="world_name" default="worlds/empty.world"/>--> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+
+  <!-- Start gazebo and load the world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+    <arg name="paused" value="$(arg paused)"/>
+    <arg name="use_sim_time" value="$(arg use_sim_time)"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="$(arg headless)"/>
+    <arg name="debug" value="$(arg debug)"/>
+    <arg name="verbose" value="$(arg verbose)"/>
+    <arg name="world_name" value="$(arg world_name)"/>
+  </include>
+
+  <!-- Spawn the example robot -->
+  <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find mapping_robot_env)/urdf/imu.xacro'" />
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_model" args="-urdf -param /robot_description -model example -x -2 -y -0.5 -z 0.22"/><!-- -x -2 -y -0.5 -z 0.22-->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="30.0" />
+  </node>
+<!-- Load the SDF into the ROS Parameter Server -->                               
+<param name="robot_sdf" textfile="/home/maciej/.gazebo/models/mapping_robot/model.sdf" />        
+
+<!-- Call a python script to the run a service call to gazebo_ros to spawn a SDF robot --> 
+<node name="sdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+args="-sdf -model summit_xl 
+-file /home/maciej/.gazebo/models/mapping_robot/model.sdf -x 0 -y -0.5 -z 0.2"/>
+
+<node name="gazebo_run_plugin" pkg="gazebo_ros" type="gazebo" respawn="false" output="screen"
+        args="-s /home/maciej/my_hol_robot_plugin/build/libmy_hol_robot_plugin.so" />
+</launch>

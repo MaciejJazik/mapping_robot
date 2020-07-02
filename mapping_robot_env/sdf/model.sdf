@@ -154,7 +154,7 @@
       <parent>chassis</parent>
     </joint>
 
-    <!--<include>
+  <!--<include>
 	<uri>model://noisy_imu</uri>
 	<pose>0 0 0.3 0 0 0</pose>
     </include>

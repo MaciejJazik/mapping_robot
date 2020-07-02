@@ -8,6 +8,8 @@
 #include <gazebo/msgs/msgs.hh>
 #include <thread>
 #include <stdlib.h>
+#include <ignition/math/Vector3.hh>
+#include <ignition/math/Quaternion.hh>
 #include "ros/ros.h"
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
@@ -58,7 +60,8 @@ namespace gazebo
 		  // having one joint that is the rotational joint.
 		  this->jointLeft = _model->GetJoints()[0];
 		  this->jointRight = _model->GetJoints()[1];
-		  std::cerr<<"\njoints names is :"<<_model->GetJoints()[0]->GetName()<<", "<<_model->GetJoints()[1]->GetName()<<"\n";
+		  //this->jointIMU = _model->GetJoints()[3]; //SENSOR
+		  //std::cerr<<"\njoints names is :"<<_model->GetJoints()[0]->GetName()<<", "<<_model->GetJoints()[1]->GetName()<<", "<<_model->GetJoints()[2]->GetName()<<", "<<_model->GetJoints()[3]->GetName()<<"\n";
 
 		  // Setup a PID-controller
 		  this->pid = common::PID(0.6, 1.0, 0.3);
@@ -181,6 +184,7 @@ namespace gazebo
 			}
 			
 			loopsWithoutPublishingVelocityData++;
+			//std::cerr<<"kat obrotu = "<<jointIMU->GetMsgType()<<"\n"; //SENSOR
 //			if(avg_twist_vel!=0||avg_linear_vel!=0)
 //				std::cerr<<"avg twist velocity: "<<(avg_twist_vel/(double)loopsWithoutPublishingVelocityData)<<" avg lin velocity: "<< (avg_linear_vel/(double)loopsWithoutPublishingVelocityData)<<"\n";
 		  }
@@ -219,6 +223,7 @@ namespace gazebo
 	/// \brief Pointer to the joint.
 	private: physics::JointPtr jointLeft;
 	private: physics::JointPtr jointRight;
+	//private: physics::JointPtr jointIMU; //SENSOR
 
 	/// \brief A PID controller for the joint.
 	private: common::PID pid;

@@ -19,14 +19,14 @@
     <!-- A testing model that includes the Velodyne sensor model -->
     <!--<model name="my_holonomous_robot">
       <include>
-	<pose>-4.0 -0.5 0.1</pose>
+	<pose>-2.0 -0.5 0.1</pose>
         <uri>model://mapping_robot</uri>
-      </include>
+      </include>-->
 
-       Attach the plugin to this model -->
-       <!--<plugin name="holonomous_robot_control" filename="/home/maciej/my_hol_robot_plugin/build/libmy_hol_robot_plugin.so"/>
-      <plugin name="imu_plugin" filename="/home/maciej/my_hol_robot_plugin/build/libgazebo_ros_imu.so"/>-->
-    <!--</model>-->
+      <!-- Attach the plugin to this model -->
+      <!--<plugin name="holonomous_robot_control" filename="/home/maciej/my_hol_robot_plugin/build/libmy_hol_robot_plugin.so"/>
+     //<plugin name="imu_plugin" filename="/home/maciej/my_hol_robot_plugin/build/libgazebo_ros_imu.so"/>-->
+    </model>
 
   </world>
 </sdf>
