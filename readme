@@ -4,6 +4,9 @@ foldery fake_odom_publisher, key_teleop_robot, robot_setup_tf przenieś do catki
 po uruchomieniu nowego okna w terminalu wywołaj komendę:
 source catkin_ws/devel/setup.bash
 
+REQUIRED PACKAGES:
+freenect_stack, vision_opencv
+
 okno 1.//uruchom ros
 roscore
 
