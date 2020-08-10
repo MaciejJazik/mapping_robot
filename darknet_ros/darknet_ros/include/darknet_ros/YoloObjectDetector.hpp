@@ -72,6 +72,8 @@ extern "C" {
 #include "utils.h"
 }
 
+#define PI 3.14159265
+
 extern "C" void ipl_into_image(IplImage* src, image im);
 extern "C" image ipl_to_image(IplImage* src);
 extern "C" void show_image_cv(image p, const char* name, IplImage* disp);
@@ -177,6 +179,7 @@ class YoloObjectDetector {
   float X;
   float Y;
   float Z;
+  float alpha;
 
   //! Detected objects.
   std::vector<std::vector<RosBox_> > rosBoxes_;

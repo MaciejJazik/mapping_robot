@@ -448,7 +448,7 @@ void YoloObjectDetector::setupNetwork(char* cfgfile, char* weightfile, char* dat
   demoThresh_ = thresh;
   demoHier_ = hier;
   fullScreen_ = fullscreen;
-  printf("YOLO V3\n");
+  printf("YOLO\n");
   net_ = load_network(cfgfile, weightfile, 0);
   set_batch_network(net_, 1);
 }
@@ -634,6 +634,12 @@ void YoloObjectDetector::Coordinates(int xmin, int ymin, int xmax, int ymax)
 {
   std::vector<std::vector<cv::Point> > contours;
   std::vector<cv::Vec4i> hierarchy;
+  float Value = 0;
+  float distance = 0;
+  int counter = 0;
+  float maxDistance = 4000.0;
+  float xcenter = ((xmax-xmin)/2.0)+xmin;
+  float ycenter = ((ymax - ymin)/2.0)+ymin;
   cv::Mat img, imgBlurred, imgCanny;
   imgBlurred = camImageCopy_.clone();
   cv::Rect detectedArea(xmin, ymin, xmax-xmin, ymax-ymin);
@@ -642,6 +648,7 @@ void YoloObjectDetector::Coordinates(int xmin, int ymin, int xmax, int ymax)
   cv::Mat croppedHSVImage = img(detectedArea);
   cv::Mat mask1,mask2;
   cv::inRange(croppedHSVImage, cv::Scalar(161, 155, 84), cv::Scalar(179, 255, 255), mask1);
+  mask2 = mask1.clone();
   cv::erode(mask1, mask1, cv::getStructuringElement(cv::MORPH_RECT, cv::Size(3,3)));
   cv::Canny(mask1, imgCanny, 100, 150, 5);
   cv::findContours(imgCanny, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE);
@@ -650,13 +657,34 @@ void YoloObjectDetector::Coordinates(int xmin, int ymin, int xmax, int ymax)
   std::vector<cv::Point> contour;
   cv::approxPolyDP(contours[i], contour, 0.02 * cv::arcLength(contours[i], true), true);
   if(area > 30 && contour.size() >=3 && contour.size() <=6){
+  for(int i=xmin; i<=xmax; i++)
+  {
+  for(int j=ymin; j<=ymax; j++)
+  {
+  Value = (float)DepthImageCopy_.at<float>(j,i);
+  if(Value==Value && ((int)mask2.at<uchar>(j,i))!=0 && Value <= maxDistance)
+  {
+  distance += Value;
+  counter++;
+  }
+  }
+  }
+  distance = distance/counter;
+  Z = distance;
+  Y = ((ycenter - 240.160459)*Z)/542.882768;
+  X = ((xcenter - 314.649173)*Z)/572.739980;
+  alpha = atan2(X,Z) *180/PI;
+  if(Z != 0 && Z <= maxDistance)
+  {  
   darknet_ros_msgs::ObjectCoordinates msg;
   msg.header.stamp = ros::Time::now();
   msg.header.frame_id = "Coordinates";
-  msg.x = 0;
-  msg.y = 0;
-  msg.z = 0;
+  msg.X = X;
+  msg.Y = Y;
+  msg.Z = Z;
+  msg.alpha = alpha;
   coordinatesPublisher_.publish(msg);
+  }
   }
   }
 }

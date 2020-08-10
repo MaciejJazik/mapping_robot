@@ -1,4 +1,5 @@
 Header header
-int8 x
-int8 y
-int8 z
+float64 X
+float64 Y
+float64 Z
+float64 alpha
