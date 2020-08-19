@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <ignition/math/Vector3.hh>
 #include <ignition/math/Quaternion.hh>
-#include <ros/ros.h>
+#include "ros/ros.h"
 #include "ros/callback_queue.h"
 #include "ros/subscribe_options.h"
 #include "std_msgs/Float32.h"
@@ -22,7 +22,8 @@
 #define TWIST_VELOCITY_FACTOR 0.35095316
 #define LINEAR_VELOCITY_FACTOR 0.06993007
 #define PI 3.14159265359
-#define DWAPI 2*3.14159265359
+
+#endif
 
 enum {LEFT, RIGHT};
 
@@ -30,23 +31,19 @@ namespace gazebo
 {
 	
   /// \brief A plugin to control a HolonomousRobot sensor.
-  class HolonomousRobotPlugin : public WorldPlugin
+  class HolonomousRobotPlugin : public ModelPlugin
   {
 	  
 		/// \brief Constructor
-		public: HolonomousRobotPlugin() : WorldPlugin() {}
+		public: HolonomousRobotPlugin() {}
 
 		/// \brief The load function is called by Gazebo when the plugin is
 		/// inserted into simulation
 		/// \param[in] _model A pointer to the model that this plugin is
 		/// attached to.
 		/// \param[in] _sdf A pointer to the plugin's SDF element.
-		public: virtual void Load(physics::WorldPtr _world, sdf::ElementPtr _sdf)
+		public: virtual void Load(physics::ModelPtr _model, sdf::ElementPtr _sdf)
 		{
-			std::cerr<<"\n===============================\n my_hol_robot_plugin started.... \n ============================== \n";
-			
-			physics::ModelPtr _model = _world->Models()[2];
-			
 		  // Just output a message for now
 		  std::cerr << "\nThe HolonomousRobot plugin is attach to model[" <<
 			_model->GetName() << "]\n";
@@ -65,8 +62,8 @@ namespace gazebo
 		  // having one joint that is the rotational joint.
 		  this->jointLeft = _model->GetJoints()[0];
 		  this->jointRight = _model->GetJoints()[1];
-		  this->jointIMU = _model->GetJoints()[3]; //SENSOR
-		  std::cerr<<"\njoints names is :"<<_model->GetJoints()[0]->GetName()<<", "<<_model->GetJoints()[1]->GetName()<<", "<<_model->GetJoints()[2]->GetName()<<", "<<_model->GetJoints()[3]->GetName()<<"\n";//<<", "<<_model->GetJoints()[3]->GetName()
+		  //this->jointIMU = _model->GetJoints()[3]; //SENSOR
+		  //std::cerr<<"\njoints names is :"<<_model->GetJoints()[0]->GetName()<<", "<<_model->GetJoints()[1]->GetName()<<", "<<_model->GetJoints()[2]->GetName()<<", "<<_model->GetJoints()[3]->GetName()<<"\n";
 
 		  // Setup a PID-controller
 		  this->pid = common::PID(0.6, 1.0, 0.3);
@@ -78,7 +75,6 @@ namespace gazebo
 			this->model->GetJointController()->SetVelocityPID(
 			  this->jointRight->GetScopedName(), this->pid);
 
-	    std::cerr<<"pid initalized..\n";
 		// Default to zero velocity
 		LeftWheelVelocity = 0;
 		RightWheelVelocity = 0;
@@ -89,7 +85,6 @@ namespace gazebo
 		this->SetLeftWheelVelocity(LeftWheelVelocity);
 		this->SetRightWheelVelocity(RightWheelVelocity);
 		
-		std::cerr<<"wheel velocity initialized..\n";
 		// Initialize ros, if it has not already bee initialized.
 		if (!ros::isInitialized())
 		{
@@ -99,7 +94,6 @@ namespace gazebo
 			  ros::init_options::NoSigintHandler);
 		}
 
-	    std::cerr<<"ros initialized..\n";
 		// Create our ROS node. This acts in a similar manner to
 		// the Gazebo node
 		this->rosNode1.reset(new ros::NodeHandle("gazebo_client"));
@@ -113,10 +107,9 @@ namespace gazebo
 			  ros::VoidPtr(), &this->rosQueue);
 			  
 		this->rosSub1 = this->rosNode1->subscribe(so);
-
+		
 		this->velocityPublisher = this->rosNode1->advertise<geometry_msgs::Twist>("/my_hol_robot/geometry_msg", 1000);
-
-	    std::cerr<<"ros subscriber initialized..\n";		
+		
 		// Spin up the queue helper thread.
 		this->rosQueueThread =
 		  std::thread(std::bind(&HolonomousRobotPlugin::QueueThread, this));
@@ -124,7 +117,6 @@ namespace gazebo
 		
 		void velCallback(const geometry_msgs::TwistConstPtr &_msg)
 		{
-			//std::cerr<<"vel Callback linear x: "<<_msg->linear.x<<"angular z: "<<_msg->angular.z<<"\n";
 		   this->SetRightWheelVelocity(_msg->linear.x-_msg->angular.z);
 		   this->SetLeftWheelVelocity(_msg->linear.x+_msg->angular.z);
 		   double twistVel =(avg_twist_vel/(double)loopsWithoutPublishingVelocityData) * TWIST_VELOCITY_FACTOR;
@@ -135,9 +127,7 @@ namespace gazebo
 		   velocityData.linear.z = 0;
 		   velocityData.angular.x = 0;
 		   velocityData.angular.y = 0;
-		   //velocityData.angular.z = twistVel;//przekazanie vTheta do odometrii
-		   velocityData.angular.z =  -this->jointIMU->Position(0);//przekazanie theta do odometrii
-		   //std::cerr<<"vel Callback linear x: "<<linearVel<<"angular z: "<<twistVel<<"\n";
+		   velocityData.angular.z = twistVel;
 		   this->velocityPublisher.publish(velocityData);
 		   loopsWithoutPublishingVelocityData=0;
 		   avg_linear_vel=0;
@@ -170,7 +160,6 @@ namespace gazebo
 		{
 			double current_angle_L;
 			double current_angle_R;
-			double current_angle_imu;
 			double current_vel_L;
 			double current_vel_R;
 		  static const double timeout = 0.01;
@@ -179,8 +168,6 @@ namespace gazebo
 			this->rosQueue.callAvailable(ros::WallDuration(timeout));
 			current_angle_L = this->jointLeft->Position(0);
 			current_angle_R = this->jointRight->Position(0);
-			current_angle_imu = -this->jointIMU->Position(0);
-			//current_angle_imu = std::fmod(current_angle_imu,DWAPI);
 			current_vel_L = this->jointLeft->GetVelocity(0);
 			current_vel_R = this->jointRight->GetVelocity(0);
 			if(LeftWheelVelocity==0&&RightWheelVelocity==0)
@@ -199,9 +186,9 @@ namespace gazebo
 			}
 			
 			loopsWithoutPublishingVelocityData++;
-			//std::cerr<<"kat obrotu = "<<current_angle_imu<<"\n"; //SENSOR jointIMU->GetMsgType()
-			//if(avg_twist_vel!=0||avg_linear_vel!=0)
-				//std::cerr<<"avg twist velocity: "<<(avg_twist_vel/(double)loopsWithoutPublishingVelocityData)<<" avg lin velocity: "<< (avg_linear_vel/(double)loopsWithoutPublishingVelocityData)<<"\n";
+			//std::cerr<<"kat obrotu = "<<jointIMU->GetMsgType()<<"\n"; //SENSOR
+//			if(avg_twist_vel!=0||avg_linear_vel!=0)
+//				std::cerr<<"avg twist velocity: "<<(avg_twist_vel/(double)loopsWithoutPublishingVelocityData)<<" avg lin velocity: "<< (avg_linear_vel/(double)loopsWithoutPublishingVelocityData)<<"\n";
 		  }
 		}
 		
@@ -238,12 +225,11 @@ namespace gazebo
 	/// \brief Pointer to the joint.
 	private: physics::JointPtr jointLeft;
 	private: physics::JointPtr jointRight;
-	private: physics::JointPtr jointIMU; //SENSOR
+	//private: physics::JointPtr jointIMU; //SENSOR
 
 	/// \brief A PID controller for the joint.
 	private: common::PID pid;
   };
   // Tell Gazebo about this plugin, so that Gazebo can call Load on this plugin.
-  GZ_REGISTER_WORLD_PLUGIN(HolonomousRobotPlugin)
+  GZ_REGISTER_MODEL_PLUGIN(HolonomousRobotPlugin)
 }
-#endif

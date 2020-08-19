@@ -128,6 +128,51 @@
           </geometry>
         </visual>
       </link>
+
+<link name="walizka">
+ <pose>0 0 0.5 0 0 0</pose>
+ <collision name="collision">
+          <geometry>
+            <!--<cylinder>
+              <radius>0.07</radius>
+              <length>.5</length>
+            </cylinder>-->
+            <box>
+             <size>0.2 0.2 0.2</size>
+            </box>
+          </geometry>
+ </collision>
+<visual name="visual">
+          <geometry>
+	    <!--<cylinder>
+              <radius>0.07</radius>
+              <length>.5</length>
+            </cylinder>-->
+ 	<box>
+             <size>0.2 0.2 0.2</size>
+            </box>
+          </geometry>
+        </visual>
+</link>
+
+<link name="mocowanie">
+ <pose>0.22 0 0.3 0 0 0</pose>
+ <collision name="collision">
+          <geometry>
+            <box>
+             <size>0.01 0.2 0.2</size>
+            </box>
+          </geometry>
+ </collision>
+<visual name="visual">
+          <geometry>
+	    <box>
+             <size>0.01 0.2 0.2</size>
+            </box>
+          </geometry>
+        </visual>
+</link>
+
 <joint type="revolute" name="left_wheel_hinge">
         <pose>0 0 -0.03 0 0 0</pose>
         <child>left_wheel</child>
@@ -154,15 +199,30 @@
       <parent>chassis</parent>
     </joint>
 
-    <!--<include>
+<joint type="revolute" name="walizka_hinge">
+<pose>0 0 0.3 0 0 0</pose>
+<child>walizka</child>
+<parent>mocowanie</parent>
+<axis>
+<xyz>0 0 1</xyz>
+</axis>
+</joint>
+
+<joint type="fixed" name="mocowanie_hinge">
+<pose>0.1 0 0.3 0 0 0</pose>
+<child>mocowanie</child>
+<parent>chassis</parent>
+</joint>
+
+<!--    <include>
 	<uri>model://noisy_imu</uri>
 	<pose>0 0 0.3 0 0 0</pose>
     </include>
     <joint name="imu_joint" type="fixed">
 	<child>imu::imu_link</child>
 	<parent>chassis</parent>
-    </joint>
-  <joint name="IMU_joint" type="fixed">
+    </joint>-->
+  <!--<joint name="IMU_joint" type="fixed">
 
     <parent>chassis</parent>
     <child>imu::IMU_link"<child/>

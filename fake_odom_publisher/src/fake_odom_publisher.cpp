@@ -8,6 +8,7 @@
 double x = 0.0;
 double y = 0.0;
 double th = 0.0;
+double last_th = 0.0;
 
 double vLinear = 0.0;
 double vx = 0.0;
@@ -23,14 +24,17 @@ double delta_x;
 double delta_y;
 double delta_th;
 
+double odom_orientation_z = 0.0;
+double odom_orientation_w = 0.0;
+
 bool msg_received = false;
 
 // Callback for processing cmd_vel messages
 void cmd_vel_callback(const geometry_msgs::Twist& vel_cmd)
 {
     vLinear = vel_cmd.linear.x;
-    //vy = 0;//vel_cmd.linear.y;
-    vth = vel_cmd.angular.z;
+    //vth = vel_cmd.angular.z;//wyznaczanie theta przy pomocy vTheta
+	th = vel_cmd.angular.z;//theta bezposrednio z pluginu
 	
     msg_received = true;
     //ROS_INFO("Recieved gemoetry_msgs message: vLinear [%f]; vTheta [%f]", vLinear, vth);
@@ -80,9 +84,14 @@ int main(int argc, char** argv)
             // Calcualate the steps
             dt = (current_time - last_time).toSec();
 			
-            delta_th = vth * dt;//last_vth
+            delta_th = th-last_th;//vth * dt;//last_vth
+			last_th=th;
 			
-            th += delta_th;
+			////////
+			odom_orientation_z = sin(th/2);
+			odom_orientation_w = cos(th/2);
+			////////
+            //th += delta_th;//wyznaczanie theta przy pomocy vTheta
 			
 			vx=vLinear*cos(th);
 			vy=vLinear*sin(th);
@@ -233,7 +242,11 @@ int main(int argc, char** argv)
         odom.pose.pose.position.x = x;
         odom.pose.pose.position.y = y;
         odom.pose.pose.position.z = 0.0;
-        odom.pose.pose.orientation = odom_quat;
+		odom.pose.pose.orientation.x = 0.0;
+		odom.pose.pose.orientation.y = 0.0;
+		odom.pose.pose.orientation.z = odom_orientation_z;
+		odom.pose.pose.orientation.w = odom_orientation_w;
+        //odom.pose.pose.orientation = odom_quat;
 
         // Set the velocity
         odom.child_frame_id = base_frame;

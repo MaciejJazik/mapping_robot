@@ -12,7 +12,7 @@ link_directories(${GAZEBO_LIBRARY_DIRS})
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${GAZEBO_CXX_FLAGS}")
 
 # Build our plugin
-add_library(my_hol_robot_plugin SHARED my_hol_robot_plugin.cc)
+add_library(my_hol_robot_plugin SHARED /home/maciej/my_hol_robot_plugin/my_hol_robot_plugin.cc)
 target_link_libraries(my_hol_robot_plugin ${GAZEBO_LIBRARIES} ${roscpp_LIBRARIES})
 
 #add_library(gazebo_ros_imu SHARED gazebo_ros_imu.cpp)
