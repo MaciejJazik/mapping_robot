@@ -1,8 +1,0 @@
-prefix=/home/maciej/catkin_ws/devel
-
-Name: kinnect_mapper
-Description: Description of kinnect_mapper
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/maciej/catkin_ws/devel/lib 
-Requires: 

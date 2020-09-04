@@ -1,2 +1,0 @@
-bool neutral
-bool happy
