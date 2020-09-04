@@ -1,55 +1,65 @@
-Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/maciej/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/pj/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0ed92/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0ed92.dir/build.make CMakeFiles/cmTC_0ed92.dir/build
-make[1]: Wejście do katalogu '/home/maciej/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0ed92.dir/CheckSymbolExists.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_0ed92.dir/CheckSymbolExists.c.o   -c /home/maciej/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_0ed92
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0ed92.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_0ed92.dir/CheckSymbolExists.c.o  -o cmTC_0ed92 
-CMakeFiles/cmTC_0ed92.dir/CheckSymbolExists.c.o: In function `main':
-CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
+Run Build Command(s):/usr/bin/make cmTC_e1556/fast && /usr/bin/make  -f CMakeFiles/cmTC_e1556.dir/build.make CMakeFiles/cmTC_e1556.dir/build
+make[1]: Wejście do katalogu '/home/pj/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e1556.dir/src.c.o
+/usr/bin/cc   -DCMAKE_HAVE_LIBC_PTHREAD -o CMakeFiles/cmTC_e1556.dir/src.c.o -c /home/pj/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_e1556
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e1556.dir/link.txt --verbose=1
+/usr/bin/cc  -DCMAKE_HAVE_LIBC_PTHREAD -rdynamic CMakeFiles/cmTC_e1556.dir/src.c.o -o cmTC_e1556 
+CMakeFiles/cmTC_e1556.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x56): undefined reference to `pthread_cancel'
+src.c:(.text+0x67): undefined reference to `pthread_join'
+src.c:(.text+0x7b): undefined reference to `pthread_atfork'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_0ed92.dir/build.make:97: recipe for target 'cmTC_0ed92' failed
-make[1]: *** [cmTC_0ed92] Error 1
-make[1]: Opuszczenie katalogu '/home/maciej/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_0ed92/fast' failed
-make: *** [cmTC_0ed92/fast] Error 2
+CMakeFiles/cmTC_e1556.dir/build.make:105: recipe for target 'cmTC_e1556' failed
+make[1]: *** [cmTC_e1556] Error 1
+make[1]: Opuszczenie katalogu '/home/pj/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_e1556/fast' failed
+make: *** [cmTC_e1556/fast] Error 2
 
-File /home/maciej/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
-/* */
+
+Source file was:
 #include <pthread.h>
 
-int main(int argc, char** argv)
+void* test_func(void* data)
 {
-  (void)argv;
-#ifndef pthread_create
-  return ((int*)(&pthread_create))[argc];
-#else
-  (void)argc;
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
   return 0;
-#endif
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/maciej/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp
+Change Dir: /home/pj/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_0c670/fast"
-/usr/bin/make -f CMakeFiles/cmTC_0c670.dir/build.make CMakeFiles/cmTC_0c670.dir/build
-make[1]: Wejście do katalogu '/home/maciej/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_0c670.dir/CheckFunctionExists.c.o
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_0c670.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_0c670
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c670.dir/link.txt --verbose=1
-/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_0c670.dir/CheckFunctionExists.c.o  -o cmTC_0c670 -lpthreads 
+Run Build Command(s):/usr/bin/make cmTC_54eb0/fast && /usr/bin/make  -f CMakeFiles/cmTC_54eb0.dir/build.make CMakeFiles/cmTC_54eb0.dir/build
+make[1]: Wejście do katalogu '/home/pj/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_54eb0.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_54eb0.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.18/Modules/CheckFunctionExists.c
+Linking C executable cmTC_54eb0
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54eb0.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create -rdynamic CMakeFiles/cmTC_54eb0.dir/CheckFunctionExists.c.o -o cmTC_54eb0  -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_0c670.dir/build.make:97: recipe for target 'cmTC_0c670' failed
-make[1]: *** [cmTC_0c670] Error 1
-make[1]: Opuszczenie katalogu '/home/maciej/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_0c670/fast' failed
-make: *** [cmTC_0c670/fast] Error 2
+CMakeFiles/cmTC_54eb0.dir/build.make:105: recipe for target 'cmTC_54eb0' failed
+make[1]: *** [cmTC_54eb0] Error 1
+make[1]: Opuszczenie katalogu '/home/pj/my_hol_robot_plugin/build/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_54eb0/fast' failed
+make: *** [cmTC_54eb0/fast] Error 2
+
 
 
