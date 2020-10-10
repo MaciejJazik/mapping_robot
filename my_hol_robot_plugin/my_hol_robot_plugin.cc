@@ -18,6 +18,7 @@
 #include "gazebo/util/system.hh"
 #include "gazebo/transport/TransportTypes.hh"
 #include "gazebo/common/Plugin.hh"
+#include <math.h>
 
 #define TWIST_VELOCITY_FACTOR 0.35095316
 #define LINEAR_VELOCITY_FACTOR 0.06993007
@@ -124,20 +125,20 @@ namespace gazebo
 		
 		void velCallback(const geometry_msgs::TwistConstPtr &_msg)
 		{
-			//std::cerr<<"vel Callback linear x: "<<_msg->linear.x<<"angular z: "<<_msg->angular.z<<"\n";
 		   this->SetRightWheelVelocity(_msg->linear.x-_msg->angular.z);
 		   this->SetLeftWheelVelocity(_msg->linear.x+_msg->angular.z);
 		   double twistVel =(avg_twist_vel/(double)loopsWithoutPublishingVelocityData) * TWIST_VELOCITY_FACTOR;
 		   double linearVel = (avg_linear_vel/(double)loopsWithoutPublishingVelocityData) * LINEAR_VELOCITY_FACTOR;
 		   geometry_msgs::Twist velocityData;
-		   velocityData.linear.x = linearVel;
-		   velocityData.linear.y = 0;
+		   velocityData.linear.x = linearVel*cos(-this->jointIMU->Position(0));
+		   velocityData.linear.y = linearVel*sin(-this->jointIMU->Position(0));
 		   velocityData.linear.z = 0;
 		   velocityData.angular.x = 0;
 		   velocityData.angular.y = 0;
 		   //velocityData.angular.z = twistVel;//przekazanie vTheta do odometrii
 		   velocityData.angular.z =  -this->jointIMU->Position(0);//przekazanie theta do odometrii
-		   //std::cerr<<"vel Callback linear x: "<<linearVel<<"angular z: "<<twistVel<<"\n";
+		   std::cerr<<"vel Callback linear x: "<<velocityData.linear.x<<"vel Callback linear y: "<<velocityData.linear.y<<"angular z: "<<velocityData.angular.z<<"\n";
+		   //std::cerr<<"vel Callback angular z: "<<-this->jointIMU->GetVelocity(0)<<"\n";
 		   this->velocityPublisher.publish(velocityData);
 		   loopsWithoutPublishingVelocityData=0;
 		   avg_linear_vel=0;

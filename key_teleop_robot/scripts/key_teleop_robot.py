@@ -43,7 +43,7 @@ def vels(speed,turn):
 if __name__=="__main__":
     settings = termios.tcgetattr(sys.stdin)
 
-    pub = rospy.Publisher('my_holonomous_robot/cmd_vel', Twist, queue_size = 1)
+    pub = rospy.Publisher('mapping_robot/cmd_vel', Twist, queue_size = 1)
     rospy.init_node('key_teleop_robot')
 
     speed = rospy.get_param("~speed", 0.5)

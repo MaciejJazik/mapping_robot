@@ -14,10 +14,10 @@ int main(int argc, char** argv)
 
   while(n.ok())
   {
-    broadcaster.sendTransform(
+    /*broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(0, 0, 0, 1), tf::Vector3(0.0, 0.0, 0.0)),
-        ros::Time::now(),"base_footprint", "base_link"));
+        ros::Time::now(),"base_footprint", "base_link"));*/
 
     broadcaster.sendTransform(
       tf::StampedTransform(
@@ -44,6 +44,11 @@ int main(int argc, char** argv)
         tf::Transform(tf::Quaternion(tf::createQuaternionFromRPY(0.0, 0.0, 0.0)), tf::Vector3(0.0, 0.0, 0.0)),
         ros::Time::now(),"camera_link", "camera_depth_frame"));
 
+        
+	/*broadcaster.sendTransform(
+	  tf::StampedTransform(
+		tf::Transform(tf::Quaternion(tf::createQuaternionFromRPY(0.0,0.0,0.0)), tf::Vector3(0.0,0.0,0.0)),
+		ros::Time::now(),"base_link","sensor"));*/
         
     r.sleep();
   }
