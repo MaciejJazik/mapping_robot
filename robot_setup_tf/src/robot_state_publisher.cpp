@@ -22,17 +22,17 @@ int main(int argc, char** argv)
     broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(tf::createQuaternionFromRPY(1.57, 0.0, 1.57)), tf::Vector3(-0.2, 0.0, 0.1)),
-        ros::Time::now(),"base_link", "wheel_left"));
+        ros::Time::now(),"base_footprint", "wheel_left"));
 
     broadcaster.sendTransform(
       tf::StampedTransform(
         tf::Transform(tf::Quaternion(tf::createQuaternionFromRPY(1.57, 0.0, 1.57)), tf::Vector3(0.2, 0.0, 0.1)),
-        ros::Time::now(),"base_link", "wheel_right"));
+        ros::Time::now(),"base_footprint", "wheel_right"));
     
     broadcaster.sendTransform(
       tf::StampedTransform(
-        tf::Transform(tf::Quaternion(tf::createQuaternionFromRPY(0.0, 0.0, -1.57)), tf::Vector3(0.0, -0.1827, 1.216)),
-        ros::Time::now(),"base_link", "kinect"));
+        tf::Transform(tf::Quaternion(tf::createQuaternionFromRPY(0.0, 0.0, 0.0)), tf::Vector3(0.0, -0.1827, 1.216)),
+        ros::Time::now(),"base_footprint", "kinect"));
         
     broadcaster.sendTransform(
       tf::StampedTransform(
