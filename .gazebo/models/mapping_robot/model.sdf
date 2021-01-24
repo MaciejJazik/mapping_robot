@@ -191,6 +191,14 @@
         </axis>
       </joint>
       <include>
+      <uri>model://hokuyo</uri>
+      <pose>0 -0.1827 1.32 0 0 -1.57</pose>
+    </include>
+    <joint name="hokuyo_joint" type="fixed">
+      <child>hokuyo::link</child>
+      <parent>chassis</parent>
+    </joint>
+    <include>
       <uri>model://kinect</uri>
       <pose>0 -0.1827 1.216 0 0 -1.57</pose>
     </include>
